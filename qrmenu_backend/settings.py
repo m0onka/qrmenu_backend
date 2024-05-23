@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_n-u9sg$zdk%otx5gm(_go4m&=rd1yzn&-4hfw6pd45uofsn(+'
+SECRET_KEY = 'django-insecure-llgjw@(ulm@%(=!qw$c=%uo1kj9a76o+rdy9vi**dh$7qmh8bm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -133,3 +133,11 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     )
 }
+
+STRIPE_API_SECRET_KEY = "YOUR_STRIPE_API_SECRET_KEY"
+
+try:
+    import django_heroku
+    django_heroku.settings(locals())
+except:
+    pass
